@@ -21,12 +21,48 @@ module.exports = {
         store: true
       },
       {
-        name: 'project_type',
-        message: 'Which framework would you like to use?',
+        name: 'project_framework',
+        message: 'Choose a JS framework',
         type: 'list',
-        choices: ['nuxt', 'gatsby', 'next','react-starter', 'vue-starter', 'vanilla'],
-        default: 'nuxt',
-        store: true
+        choices: ['Vue', 'React', 'Angular', 'None'],
+        default: 'Vue',
+        store: true,
+      },
+      {
+        name: 'project_type',
+        message: 'Which Starter would you like to use?',
+        type: 'list',
+        choices: ['NuxtJS', 'Vue Starter'],
+        default: 'NuxtJS',
+        store: true,
+        when: answers => answers.project_framework === 'Vue'
+      },
+      {
+        name: 'project_type',
+        message: 'Which Starter would you like to use?',
+        type: 'list',
+        choices: ['NestJS', 'Angular Starter'],
+        default: 'NestJS',
+        store: true,
+        when: answers => answers.project_framework === 'Angular'
+      },
+      {
+        name: 'project_type',
+        message: 'Which Starter would you like to use?',
+        type: 'list',
+        choices: ['NextJS', 'Gatsby', 'React-starter'],
+        default: 'NextJS',
+        store: true,
+        when: answers => answers.project_framework === 'React'
+      },
+      {
+        name: 'project_bundler',
+        message: 'Which Bundler would you like to?',
+        type: 'list',
+        choices: ['webpack','parcel','none'],
+        default: 'webpack',
+        store: true,
+        when: answers => answers.project_framework === 'None'
       },
       {
         name: 'project_options',
