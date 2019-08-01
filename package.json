@@ -1,6 +1,6 @@
 {
   "name": "create-vue-package",
-  "version": "0.0.7",
+  "version": "0.0.1",
   "description": "Create a new project using Henri's",
   "main": "cli.js",
   "bin": "cli.js",
@@ -18,7 +18,7 @@
     "try": "rm -rf test-project && node cli.js test-project"
   },
   "repository": {
-    "url": "silvandiepen/create-vue-package",
+    "url": "henris-style/create-henris-project",
     "type": "git"
   },
   "author": "silvandiepen<me@silvandiepen.com>",
