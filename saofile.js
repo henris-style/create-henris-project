@@ -24,7 +24,7 @@ module.exports = {
         name: 'project_type',
         message: 'Which framework would you like to use?',
         type: 'list',
-        choices: ['nuxt', 'gatsby', 'next'],
+        choices: ['nuxt', 'gatsby', 'next','react-starter', 'vue-starter', 'vanilla'],
         default: 'nuxt',
         store: true
       },
@@ -34,7 +34,8 @@ module.exports = {
         type: 'checkbox',
         choices: [
           { name: 'Guyn', checked: false },
-          { name: 'Stylelint', checked: false }
+          { name: 'Stylelint', checked: true },
+          { name: 'ESLint', checked: true }
         ],
         store: true
       }
