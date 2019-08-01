@@ -21,6 +21,14 @@ module.exports = {
         store: true
       },
       {
+        name: 'project_sass',
+        message: 'Choose a Sass Version to use',
+        type: 'list',
+        choices: ['Node Sass', 'Dart Sass'],
+        default: 'Node Sass',
+        store: true,
+      },
+      {
         name: 'project_framework',
         message: 'Choose a JS framework',
         type: 'list',
