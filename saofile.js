@@ -61,7 +61,7 @@ module.exports = {
   ],
   async completed() {
     this.gitInit() 
-    // await this.npmInstall()
+    await this.npmInstall()
     var command = "mkdir -p assets/scss && cd assets/scss && (curl -s0 https://raw.githubusercontent.com/henris-style/setup-files/master/setup.sh) | bash";
     var dir = exec(command, function(err, stdout) {
       if (err) {
