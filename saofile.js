@@ -27,8 +27,11 @@ module.exports = {
         name: 'project_sass',
         message: 'Choose a Sass Version to use',
         type: 'list',
-        choices: ['Node Sass', 'Dart Sass'],
-        default: 'Node Sass',
+        choices: [
+          { name: 'Node Sass', value: 'node-sass'},
+          { name: 'Dart Sass', value: 'sass' }
+        ],
+        default: 'node-sass',
         store: true,
       },
       {
@@ -36,13 +39,17 @@ module.exports = {
         message: 'Which addons do you want to add?',
         type: 'checkbox',
         choices: [
-          { name: 'Guyn', checked: false },
-          { name: 'Stylelint', checked: true },
-          { name: 'ESLint', checked: true }
+          { name: 'Guyn', value: 'guyn', checked: false },
+          { name: 'Stylelint', value: 'stylelint', checked: true },
         ],
         store: true
       }
     ]
+  }, 
+  templateData() {
+    const guyn = this.answers.project_options.includes('guyn');
+    const stylelint = this.answers.project_options.includes('stylelint');
+    return { guyn, stylelint }
   },
   actions: [
     {
@@ -61,7 +68,7 @@ module.exports = {
   ],
   async completed() {
     this.gitInit() 
-    await this.npmInstall()
+    // await this.npmInstall()
     var command = "mkdir -p assets/scss && cd assets/scss && (curl -s0 https://raw.githubusercontent.com/henris-style/setup-files/master/setup.sh) | bash";
     var dir = exec(command, function(err, stdout) {
       if (err) {
