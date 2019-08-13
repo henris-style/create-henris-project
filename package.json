@@ -1,6 +1,6 @@
 {
   "name": "create-henris-project",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Create a new project using Henri's",
   "main": "cli.js",
   "bin": "cli.js",
