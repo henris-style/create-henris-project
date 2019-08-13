@@ -61,11 +61,10 @@ module.exports = {
   ],
   async completed() {
     this.gitInit() 
-    // await shell.exec('script/henris-setup.sh')
-    // await this.npmInstall()
-    dir = exec("node script/henris-steup", function(err, stdout, stderr) {
+    await this.npmInstall()
+    dir = exec("bash script/henris-setup.sh", function(err, stdout) {
       if (err) {
-        // should have err.code here?  
+        console.log('couldn\'t create all Henri\'s files');
       }
       console.log(stdout);
     });
