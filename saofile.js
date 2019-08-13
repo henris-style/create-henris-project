@@ -49,7 +49,9 @@ module.exports = {
   templateData() {
     const guyn = this.answers.project_options.includes('guyn');
     const stylelint = this.answers.project_options.includes('stylelint');
-    return { guyn, stylelint }
+    const nodeSass = this.answers.project_sass == 'node-sass';
+    const sass = this.answers.project_sass == 'sass';
+    return { guyn, stylelint, nodeSass, sass }
   },
   actions: [
     {

@@ -35,12 +35,13 @@
 		"eslint-loader": "^2.1.1",
 		"eslint-plugin-vue": "^5.2.2",
 		"eslint-plugin-prettier": "^3.0.0",
-		<%_ if (project_sass == 'node-sass') { _%>		"node-sass": "^4.9.3",<%_ } else { _%>		"sass": "^1.22.9",<%_ } _%>
-		"sass-loader": "^7.1.0"<%_ if (stylelint) { _%>,
-		"stylelint": "^9.10.1",
-		"stylelint-logical-order": "^0.0.5",
-		"stylelint-order": "^2.2.0"<%_ } _%><%_ if (guyn) { _%>,
-		"guyn": "*"<%_ } _%>
+		<%_ if (stylelint) { _%>"stylelint": "^9.10.1",<%_ } _%>
+		<%_ if (stylelint) { _%>"stylelint-logical-order": "^0.0.5",<%_ } _%>
+		<%_ if (stylelint) { _%>"stylelint-order": "^2.2.0"<%_ } _%>
+		<%_ if (guyn) { _%>"guyn": "*",<%_ } _%>
+		<%_ if (nodeSass) { _%>"node-sass": "^4.9.3",<%_ } _%>
+		<%_ if (sass) { _%>"sass": "^1.22.9",<%_ } _%>
+		"sass-loader": "^7.1.0"
 	},
 	"browserslist": ["last 2 versions", "not dead"],
 	"stylelint": {

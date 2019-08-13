@@ -40,11 +40,11 @@
     }
   },
   "lint-staged": {
-    "*.js, !template/**, !template/_package.json": [
+    "*.js, !template/**": [
       "standard --fix",
       "git add"
     ],
-    "*.{json,md}": [
+    "*.{json,md}, !template/**": [
       "prettier --write",
       "git add"
     ]
