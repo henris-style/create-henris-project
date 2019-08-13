@@ -1,5 +1,4 @@
-var exec = require('child_process').exec;
-
+var exec = require('child_process').exec
 
 module.exports = {
   prompts() {
@@ -28,11 +27,11 @@ module.exports = {
         message: 'Choose a Sass Version to use',
         type: 'list',
         choices: [
-          { name: 'Node Sass', value: 'node-sass'},
+          { name: 'Node Sass', value: 'node-sass' },
           { name: 'Dart Sass', value: 'sass' }
         ],
         default: 'node-sass',
-        store: true,
+        store: true
       },
       {
         name: 'project_options',
@@ -40,17 +39,17 @@ module.exports = {
         type: 'checkbox',
         choices: [
           { name: 'Guyn', value: 'guyn', checked: false },
-          { name: 'Stylelint', value: 'stylelint', checked: true },
+          { name: 'Stylelint', value: 'stylelint', checked: true }
         ],
         store: true
       }
     ]
-  }, 
+  },
   templateData() {
-    const guyn = this.answers.project_options.includes('guyn');
-    const stylelint = this.answers.project_options.includes('stylelint');
-    const nodeSass = this.answers.project_sass == 'node-sass';
-    const sass = this.answers.project_sass == 'sass';
+    const guyn = this.answers.project_options.includes('guyn')
+    const stylelint = this.answers.project_options.includes('stylelint')
+    const nodeSass = this.answers.project_sass == 'node-sass'
+    const sass = this.answers.project_sass == 'sass'
     return { guyn, stylelint, nodeSass, sass }
   },
   actions: [
@@ -69,16 +68,43 @@ module.exports = {
     }
   ],
   async completed() {
-    this.gitInit() 
+    this.gitInit()
     // await this.npmInstall()
-    var command = "mkdir -p assets/scss && cd assets/scss && (curl -s0 https://raw.githubusercontent.com/henris-style/setup-files/master/setup.sh) | bash";
+    var command =
+      'mkdir -p assets/scss && cd assets/scss && (curl -s0 https://raw.githubusercontent.com/henris-style/setup-files/master/setup.sh) | bash'
     var dir = exec(command, function(err, stdout) {
       if (err) {
-        console.log('couldn\'t create all Henri\'s files\n\n', err);
+        console.log("couldn't create all Henri's files\n\n", err)
       }
-      console.log(stdout);
-    });
-    
+      console.log(stdout)
+    })
+
+    console.log("\x1b[94m")
+    console.log('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh')
+    console.log('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh')
+    console.log('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh')
+    console.log('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh')
+    console.log('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh')
+    console.log('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh')
+    console.log('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh')
+    console.log('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh')
+    console.log('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh')
+    console.log('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh')
+    console.log('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh')
+    console.log('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh')
+    console.log('hhhhhhhhhhhhhhhhhhh   hhhhhhhhhhhhhhe  .hhhhhhhhhh')
+    console.log('hhhhhhhhhhhhhhhhhhh   hhhhhhhhhhhhhh   ehhhhhhhhhh')
+    console.log('hhhhhhhhhhhhhhhhhhh   hh    hhhhhhh    hhhhe      ')
+    console.log('hhhhhhhhhhhhhhhhhhh      hh   hhhh   hhhhh    sss+')
+    console.log('hhhhhhhhhhhhhhhhhhh    hhhhi   hhhhhhhhhhh   ssshh')
+    console.log('hhhhhhhhhhhhhhhhhhh   hhhhhh   hhhhhhhhhhhy      h')
+    console.log('hhhhhhhhhhhhhhhhhhh   hhhhhh   hhhhhhhhhhhhhhsss  ')
+    console.log('hhhhhhhhhhhhhhhhhhh   hhhhhh   hhhhhhhhhhe  hhhh  ')
+    console.log('hhhhhhhhhhhhhhhhhhh   hhhhhh   hhhhhhhhhhhs       ')
+    console.log('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhsssh')
+    console.log('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh')
+    console.log('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh')
+    console.log('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh','\x1b[0m')
     console.log()
     console.log(this.chalk.bold(`  You are done! Happy developing.\n`))
     console.log()
