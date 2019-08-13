@@ -1,3 +1,6 @@
+var exec = require('child_process').exec;
+
+
 module.exports = {
   prompts() {
     return [
@@ -29,50 +32,6 @@ module.exports = {
         store: true,
       },
       {
-        name: 'project_framework',
-        message: 'Choose a JS framework',
-        type: 'list',
-        choices: ['Vue', 'React', 'Angular', 'None'],
-        default: 'Vue',
-        store: true,
-      },
-      {
-        name: 'project_type',
-        message: 'Which Starter would you like to use?',
-        type: 'list',
-        choices: ['NuxtJS', 'Vue Starter'],
-        default: 'NuxtJS',
-        store: true,
-        when: answers => answers.project_framework === 'Vue'
-      },
-      {
-        name: 'project_type',
-        message: 'Which Starter would you like to use?',
-        type: 'list',
-        choices: ['NestJS', 'Angular Starter'],
-        default: 'NestJS',
-        store: true,
-        when: answers => answers.project_framework === 'Angular'
-      },
-      {
-        name: 'project_type',
-        message: 'Which Starter would you like to use?',
-        type: 'list',
-        choices: ['NextJS', 'Gatsby', 'React-starter'],
-        default: 'NextJS',
-        store: true,
-        when: answers => answers.project_framework === 'React'
-      },
-      {
-        name: 'project_bundler',
-        message: 'Which Bundler would you like to?',
-        type: 'list',
-        choices: ['webpack','parcel','none'],
-        default: 'webpack',
-        store: true,
-        when: answers => answers.project_framework === 'None'
-      },
-      {
         name: 'project_options',
         message: 'Which addons do you want to add?',
         type: 'checkbox',
@@ -87,7 +46,7 @@ module.exports = {
   },
   actions: [
     {
-      templateDir: 'nuxt',
+      templateDir: 'template',
       type: 'add',
       files: '**'
     },
@@ -95,17 +54,22 @@ module.exports = {
       type: 'move',
       patterns: {
         'nuxt/**': '**',
-        _assets: 'assets',
-        _gitignore: '.gitignore',
-        '_eslintrc.js': '.eslintrc.js',
+        gitignore: '.gitignore',
         '_package.json': 'package.json'
       }
     }
   ],
   async completed() {
-    this.gitInit()
-    await this.npmInstall()
-
+    this.gitInit() 
+    // await shell.exec('script/henris-setup.sh')
+    // await this.npmInstall()
+    dir = exec("node script/henris-steup", function(err, stdout, stderr) {
+      if (err) {
+        // should have err.code here?  
+      }
+      console.log(stdout);
+    });
+    
     console.log()
     console.log(this.chalk.bold(`  You are done! Happy developing.\n`))
     console.log()
