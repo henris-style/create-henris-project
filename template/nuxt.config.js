@@ -40,8 +40,21 @@ module.exports = {
 	/*
 	 ** Nuxt.js modules
 	 */
-	modules: [
-		'nuxt-rfg-icon',
+	modules: [		
+		[
+			'nuxt-rfg-icon',
+			{
+				rfg: {
+					design: {
+						ios: {
+							pictureAspect: 'backgroundAndMargin',
+							backgroundColor: '#000000',
+							margin: '0%'
+						}
+					}
+				}
+			}
+		],
 		// '@nuxtjs/google-analytics',
 		'@nuxtjs/axios'
 	],
@@ -62,6 +75,12 @@ module.exports = {
 			retries: 3
 		},
 		baseURL: config.api
+	},
+	/*
+	 ** Generate all routes for blog posts.
+	 */
+	generate: {
+		fallback: true
 	},
 
 	/*
