@@ -62,9 +62,10 @@ module.exports = {
   async completed() {
     this.gitInit() 
     // await this.npmInstall()
-    dir = exec("bash script/henris-setup.sh", function(err, stdout) {
+    var command = "mkdir -p assets/scss && cd assets/scss && (curl -s0 https://raw.githubusercontent.com/henris-style/setup-files/master/setup.sh) | bash";
+    var dir = exec(command, function(err, stdout) {
       if (err) {
-        console.log('couldn\'t create all Henri\'s files', err);
+        console.log('couldn\'t create all Henri\'s files\n\n', err);
       }
       console.log(stdout);
     });
