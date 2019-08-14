@@ -24,6 +24,7 @@
   "author": "silvandiepen<me@silvandiepen.com>",
   "license": "MIT",
   "dependencies": {
+    "await-exec": "^0.1.2",
     "sao": "^1.6.1"
   },
   "devDependencies": {

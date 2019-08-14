@@ -1,4 +1,4 @@
-var exec = require('child_process').exec
+const exec = require('await-exec')
 
 module.exports = {
   prompts() {
@@ -61,23 +61,26 @@ module.exports = {
     {
       type: 'move',
       patterns: {
-        'nuxt/**': '**',
-        gitignore: '.gitignore',
         '_package.json': 'package.json'
       }
     }
   ],
   async completed() {
     this.gitInit()
-    await this.npmInstall()
-    var command =
-      'mkdir -p assets/scss && cd assets/scss && (curl -s0 https://raw.githubusercontent.com/henris-style/setup-files/master/setup.sh) | bash'
-    var dir = exec(command, function(err, stdout) {
+    var nuxt = await exec('(curl -s0 https://raw.githubusercontent.com/henris-style/henris-app-files/master/nuxt/setup.sh) | bash', function(err, stdout) {
+      if (err) {
+        console.log("Couldn\'t setup Nuxt files\n\n", err)
+      }
+      console.log(stdout)
+    })
+    var assets = await exec('mkdir -p assets/scss && cd assets/scss && (curl -s0 https://raw.githubusercontent.com/henris-style/setup-files/master/setup.sh) | bash', function(err, stdout) {
       if (err) {
         console.log("couldn't create all Henri's files\n\n", err)
       }
       console.log(stdout)
     })
+    
+    await this.npmInstall()
 
     console.log()
     console.log(this.chalk.blue('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh'))
