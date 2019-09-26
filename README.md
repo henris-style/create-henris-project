@@ -1,6 +1,8 @@
 # create-henris-project
 
-[![NPM version](https://badgen.net/npm/v/create-henris-project)](https://npmjs.com/package/create-henris-project) [![NPM downloads](https://badgen.net/npm/dm/create-henris-project)](https://npmjs.com/package/create-henris-project) [![CircleCI](https://badgen.net/circleci/github/silvandiepen/create-henris-project/master)](https://circleci.com/gh/silvandiepen/create-henris-project/tree/master)
+[![NPM version](https://badgen.net/npm/v/create-henris-project)](https://npmjs.com/package/create-henris-project) 
+[![NPM downloads](https://badgen.net/npm/dm/create-henris-project)](https://npmjs.com/package/create-henris-project) 
+[![CircleCI](https://badgen.net/circleci/github/silvandiepen/create-henris-project/master)](https://circleci.com/gh/silvandiepen/create-henris-project/tree/master)
 
 Scaffold a Nuxt project with Henri's in a minute.
 
