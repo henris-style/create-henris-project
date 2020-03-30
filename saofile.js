@@ -27,10 +27,10 @@ module.exports = {
         message: 'Choose a Sass Version to use',
         type: 'list',
         choices: [
-          { name: 'Node Sass', value: 'node-sass' },
-          { name: 'Dart Sass', value: 'sass' }
+          { name: 'Sass', value: 'sass' },
+          { name: 'Node Sass', value: 'node-sass' }
         ],
-        default: 'node-sass',
+        default: 'sass',
         store: true
       },
       {
@@ -38,19 +38,19 @@ module.exports = {
         message: 'Which addons do you want to add?',
         type: 'checkbox',
         choices: [
-          { name: 'Guyn', value: 'guyn', checked: false },
-          { name: 'Stylelint', value: 'stylelint', checked: true }
+          { name: 'Guyn Design System', value: 'guyn-ds', checked: false },
+          { name: 'Guyn Color', value: 'guyn-color', checked: false }
         ],
         store: true
       }
     ]
   },
   templateData() {
-    const guyn = this.answers.project_options.includes('guyn')
-    const stylelint = this.answers.project_options.includes('stylelint')
+    const guynDs = this.answers.project_options.includes('guyn-ds')
+    const guynColor = this.answers.project_options.includes('guyn-color')
     const nodeSass = this.answers.project_sass == 'node-sass'
     const sass = this.answers.project_sass == 'sass'
-    return { guyn, stylelint, nodeSass, sass }
+    return { guynDs, guynColor, stylelint, nodeSass, sass }
   },
   actions: [
     {
