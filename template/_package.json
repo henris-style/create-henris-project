@@ -49,6 +49,7 @@
 		"lint-staged": "^10.0.0",
 		<%_ if (nodeSass) { _%>"node-sass": "^4.9.3",<%_ } _%>
 		<%_ if (sass) { _%>"sass": "^1.22.9",<%_ } _%>
+		"sass-loader": "^8.0.2",
 		"stylelint": "^10.1.0",
 		"stylelint-logical-order": "^0.0.5",
 		"stylelint-order": "^2.2.0",
