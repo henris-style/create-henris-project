@@ -23,34 +23,34 @@
 		"nuxt": "^2.8.1",
 		"@nuxtjs/axios": "^5.4.1",
 		"@nuxtjs/google-analytics": "^2.2.0",
-    "@nuxt/typescript-runtime": "^0.4.0",
-    "@nuxtjs/pwa": "^3.0.0-0"
+		"@nuxt/typescript-runtime": "^0.4.0",
+		"@nuxtjs/pwa": "^3.0.0-0"
 	},
 	"devDependencies": {
 		"@henris/custom": "^0.0.2",
-    "@nuxt/typescript-build": "^0.6.0",
-    "@nuxtjs/eslint-config-typescript": "^1.0.0",
-    "@nuxtjs/eslint-module": "^1.0.0",
-    "@nuxtjs/stylelint-module": "^3.1.0",
-    "@vue/test-utils": "^1.0.0-beta.27",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^24.1.0",
-    "eslint": "^6.1.0",
-    "eslint-plugin-nuxt": ">=0.4.2",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "prettier": "^1.19.1",
+		"@nuxt/typescript-build": "^0.6.0",
+		"@nuxtjs/eslint-config-typescript": "^1.0.0",
+		"@nuxtjs/eslint-module": "^1.0.0",
+		"@nuxtjs/stylelint-module": "^3.1.0",
+		"@vue/test-utils": "^1.0.0-beta.27",
+		"babel-eslint": "^10.0.1",
+		"babel-jest": "^24.1.0",
+		"eslint": "^6.1.0",
+		"eslint-plugin-nuxt": ">=0.4.2",
+		"eslint-config-prettier": "^6.10.0",
+		"eslint-plugin-prettier": "^3.1.2",
+		"prettier": "^1.19.1",
 		<%_ if (guyn) { _%>"guyn": "*",<%_ } _%>
 		"henris": "^1.2.0",
-    "husky": "^4.0.0",
-    "jest": "^24.1.0",
-    "lint-staged": "^10.0.0",
-    <%_ if (nodeSass) { _%>"node-sass": "^4.9.3",<%_ } _%>
-    <%_ if (sass) { _%>"sass": "^1.22.9",<%_ } _%>
+		"husky": "^4.0.0",
+		"jest": "^24.1.0",
+		"lint-staged": "^10.0.0",
+		<%_ if (nodeSass) { _%>"node-sass": "^4.9.3",<%_ } _%>
+		<%_ if (sass) { _%>"sass": "^1.22.9",<%_ } _%>
 		"stylelint": "^10.1.0",
 		"stylelint-logical-order": "^0.0.5",
 		"stylelint-order": "^2.2.0",
-    "ts-jest": "^25.0.0",
-    "vue-jest": "^4.0.0-0"
-  }
+		"ts-jest": "^25.0.0",
+		"vue-jest": "^4.0.0-0"
+	}
 }
