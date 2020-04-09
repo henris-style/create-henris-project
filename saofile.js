@@ -38,7 +38,11 @@ module.exports = {
         message: 'Which addons do you want to add?',
         type: 'checkbox',
         choices: [
-          { name: 'Guyn Design System (alpha)', value: 'guyn-ds', checked: false },
+          {
+            name: 'Guyn Design System (alpha)',
+            value: 'guyn-ds',
+            checked: false
+          },
           { name: 'Guyn Color', value: 'guyn-color', checked: false }
         ],
         store: true
@@ -50,7 +54,7 @@ module.exports = {
     const guynColor = this.answers.project_options.includes('guyn-color')
     const nodeSass = this.answers.project_sass == 'node-sass'
     const sass = this.answers.project_sass == 'sass'
-    return { guynDs, guynColor, stylelint, nodeSass, sass }
+    return { guynDs, guynColor, nodeSass, sass }
   },
   actions: [
     {
@@ -212,7 +216,11 @@ module.exports = {
           this._answers.project_name
         )}`
       )
-      console.log(`   Run ${this.chalk.bold("'npm install && npm run dev'")} to get started..`)
+      console.log(
+        `   Run ${this.chalk.bold(
+          "'npm install && npm run dev'"
+        )} to get started..`
+      )
       console.log()
       console.log()
     }, 1000)
